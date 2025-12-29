@@ -90,12 +90,46 @@ const ex30CrystalWhitePlusIndigo: VehicleImageConfig = {
   },
 };
 
+// EX30 Onyx Black Plus - Pine Interior
+const ex30OnyxBlackPlusPine: VehicleImageConfig = {
+  model: 'EX30',
+  version: 'Plus',
+  colorSlug: 'onyx-black',
+  interiorSlug: 'pine',
+  images: {
+    exterior: getExteriorImagePath('EX30', 'onyx-black', 'exterior'),
+    frente: getExteriorImagePath('EX30', 'onyx-black', 'frente'),
+    traseira: getExteriorImagePath('EX30', 'onyx-black', 'traseira'),
+    interior: getImagePath('EX30', 'onyx-black', 'pine', 'interior'),
+    bancos: getImagePath('EX30', 'onyx-black', 'pine', 'bancos'),
+    console: getImagePath('EX30', 'onyx-black', 'pine', 'console'),
+  },
+};
+
+// EX30 Onyx Black Plus - Indigo Interior
+const ex30OnyxBlackPlusIndigo: VehicleImageConfig = {
+  model: 'EX30',
+  version: 'Plus',
+  colorSlug: 'onyx-black',
+  interiorSlug: 'indigo',
+  images: {
+    exterior: getExteriorImagePath('EX30', 'onyx-black', 'exterior'),
+    frente: getExteriorImagePath('EX30', 'onyx-black', 'frente'),
+    traseira: getExteriorImagePath('EX30', 'onyx-black', 'traseira'),
+    interior: getImagePath('EX30', 'onyx-black', 'indigo', 'interior'),
+    bancos: getImagePath('EX30', 'onyx-black', 'indigo', 'bancos'),
+    console: getImagePath('EX30', 'onyx-black', 'indigo', 'console'),
+  },
+};
+
 // All available vehicle image configurations
 export const vehicleImageConfigs: VehicleImageConfig[] = [
   ex30CloudBluePlusPine,
   ex30CloudBluePlusIndigo,
   ex30CrystalWhitePlusPine,
   ex30CrystalWhitePlusIndigo,
+  ex30OnyxBlackPlusPine,
+  ex30OnyxBlackPlusIndigo,
 ];
 
 // Color name to slug mapping
