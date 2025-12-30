@@ -186,6 +186,54 @@ const ex30SandDunePlusIndigo: VehicleImageConfig = {
   },
 };
 
+// EX30 Sand Dune Ultra - Breeze Interior
+const ex30SandDuneUltraBreeze: VehicleImageConfig = {
+  model: 'EX30',
+  version: 'Ultra',
+  colorSlug: 'sand-dune',
+  interiorSlug: 'breeze',
+  images: {
+    exterior: '/vehicles/EX30/sand-dune/ultra/exterior.jpg',
+    frente: '/vehicles/EX30/sand-dune/ultra/frente.jpg',
+    traseira: '/vehicles/EX30/sand-dune/ultra/traseira.jpg',
+    interior: '/vehicles/EX30/sand-dune/ultra/breeze/interior.jpg',
+    bancos: '/vehicles/EX30/sand-dune/ultra/breeze/bancos.jpg',
+    console: '/vehicles/EX30/sand-dune/ultra/breeze/console.jpg',
+  },
+};
+
+// EX30 Sand Dune Ultra - Mist Interior
+const ex30SandDuneUltraMist: VehicleImageConfig = {
+  model: 'EX30',
+  version: 'Ultra',
+  colorSlug: 'sand-dune',
+  interiorSlug: 'mist',
+  images: {
+    exterior: '/vehicles/EX30/sand-dune/ultra/exterior.jpg',
+    frente: '/vehicles/EX30/sand-dune/ultra/frente.jpg',
+    traseira: '/vehicles/EX30/sand-dune/ultra/traseira.jpg',
+    interior: '/vehicles/EX30/sand-dune/ultra/mist/interior.jpg',
+    bancos: '/vehicles/EX30/sand-dune/ultra/mist/bancos.jpg',
+    console: '/vehicles/EX30/sand-dune/ultra/mist/console.jpg',
+  },
+};
+
+// EX30 Sand Dune Ultra - Indigo Interior
+const ex30SandDuneUltraIndigo: VehicleImageConfig = {
+  model: 'EX30',
+  version: 'Ultra',
+  colorSlug: 'sand-dune',
+  interiorSlug: 'indigo',
+  images: {
+    exterior: '/vehicles/EX30/sand-dune/ultra/exterior.jpg',
+    frente: '/vehicles/EX30/sand-dune/ultra/frente.jpg',
+    traseira: '/vehicles/EX30/sand-dune/ultra/traseira.jpg',
+    interior: '/vehicles/EX30/sand-dune/ultra/indigo/interior.avif',
+    bancos: '/vehicles/EX30/sand-dune/ultra/indigo/bancos.avif',
+    console: '/vehicles/EX30/sand-dune/ultra/indigo/console.avif',
+  },
+};
+
 // All available vehicle image configurations
 export const vehicleImageConfigs: VehicleImageConfig[] = [
   ex30CloudBluePlusPine,
@@ -198,6 +246,9 @@ export const vehicleImageConfigs: VehicleImageConfig[] = [
   ex30VapourGreyPlusIndigo,
   ex30SandDunePlusPine,
   ex30SandDunePlusIndigo,
+  ex30SandDuneUltraBreeze,
+  ex30SandDuneUltraMist,
+  ex30SandDuneUltraIndigo,
 ];
 
 // Color name to slug mapping
