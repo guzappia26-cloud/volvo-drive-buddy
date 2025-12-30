@@ -122,6 +122,38 @@ const ex30OnyxBlackPlusIndigo: VehicleImageConfig = {
   },
 };
 
+// EX30 Vapour Grey Plus - Pine Interior
+const ex30VapourGreyPlusPine: VehicleImageConfig = {
+  model: 'EX30',
+  version: 'Plus',
+  colorSlug: 'vapour-grey',
+  interiorSlug: 'pine',
+  images: {
+    exterior: getExteriorImagePath('EX30', 'vapour-grey', 'exterior'),
+    frente: getExteriorImagePath('EX30', 'vapour-grey', 'frente'),
+    traseira: getExteriorImagePath('EX30', 'vapour-grey', 'traseira'),
+    interior: getImagePath('EX30', 'vapour-grey', 'pine', 'interior'),
+    bancos: getImagePath('EX30', 'vapour-grey', 'pine', 'bancos'),
+    console: '/vehicles/EX30/vapour-grey/pine/console.avif',
+  },
+};
+
+// EX30 Vapour Grey Plus - Indigo Interior
+const ex30VapourGreyPlusIndigo: VehicleImageConfig = {
+  model: 'EX30',
+  version: 'Plus',
+  colorSlug: 'vapour-grey',
+  interiorSlug: 'indigo',
+  images: {
+    exterior: getExteriorImagePath('EX30', 'vapour-grey', 'exterior'),
+    frente: getExteriorImagePath('EX30', 'vapour-grey', 'frente'),
+    traseira: getExteriorImagePath('EX30', 'vapour-grey', 'traseira'),
+    interior: getImagePath('EX30', 'vapour-grey', 'indigo', 'interior'),
+    bancos: getImagePath('EX30', 'vapour-grey', 'indigo', 'bancos'),
+    console: '/vehicles/EX30/vapour-grey/indigo/console.avif',
+  },
+};
+
 // All available vehicle image configurations
 export const vehicleImageConfigs: VehicleImageConfig[] = [
   ex30CloudBluePlusPine,
@@ -130,6 +162,8 @@ export const vehicleImageConfigs: VehicleImageConfig[] = [
   ex30CrystalWhitePlusIndigo,
   ex30OnyxBlackPlusPine,
   ex30OnyxBlackPlusIndigo,
+  ex30VapourGreyPlusPine,
+  ex30VapourGreyPlusIndigo,
 ];
 
 // Color name to slug mapping
