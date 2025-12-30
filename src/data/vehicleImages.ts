@@ -154,6 +154,38 @@ const ex30VapourGreyPlusIndigo: VehicleImageConfig = {
   },
 };
 
+// EX30 Sand Dune Plus - Pine Interior
+const ex30SandDunePlusPine: VehicleImageConfig = {
+  model: 'EX30',
+  version: 'Plus',
+  colorSlug: 'sand-dune',
+  interiorSlug: 'pine',
+  images: {
+    exterior: getExteriorImagePath('EX30', 'sand-dune', 'exterior'),
+    frente: getExteriorImagePath('EX30', 'sand-dune', 'frente'),
+    traseira: getExteriorImagePath('EX30', 'sand-dune', 'traseira'),
+    interior: getImagePath('EX30', 'sand-dune', 'pine', 'interior'),
+    bancos: getImagePath('EX30', 'sand-dune', 'pine', 'bancos'),
+    console: '/vehicles/EX30/sand-dune/pine/console.avif',
+  },
+};
+
+// EX30 Sand Dune Plus - Indigo Interior
+const ex30SandDunePlusIndigo: VehicleImageConfig = {
+  model: 'EX30',
+  version: 'Plus',
+  colorSlug: 'sand-dune',
+  interiorSlug: 'indigo',
+  images: {
+    exterior: getExteriorImagePath('EX30', 'sand-dune', 'exterior'),
+    frente: getExteriorImagePath('EX30', 'sand-dune', 'frente'),
+    traseira: getExteriorImagePath('EX30', 'sand-dune', 'traseira'),
+    interior: getImagePath('EX30', 'sand-dune', 'indigo', 'interior'),
+    bancos: getImagePath('EX30', 'sand-dune', 'indigo', 'bancos'),
+    console: '/vehicles/EX30/sand-dune/indigo/console.avif',
+  },
+};
+
 // All available vehicle image configurations
 export const vehicleImageConfigs: VehicleImageConfig[] = [
   ex30CloudBluePlusPine,
@@ -164,6 +196,8 @@ export const vehicleImageConfigs: VehicleImageConfig[] = [
   ex30OnyxBlackPlusIndigo,
   ex30VapourGreyPlusPine,
   ex30VapourGreyPlusIndigo,
+  ex30SandDunePlusPine,
+  ex30SandDunePlusIndigo,
 ];
 
 // Color name to slug mapping
