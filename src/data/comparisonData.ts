@@ -485,7 +485,7 @@ const xc90Data: VolvoModelData = {
   model: 'XC90',
   versions: [
     {
-      name: 'T8 Momentum',
+      name: 'T8 Plus',
       price: 'R$ 639.000',
       motorType: 'PHEV',
       power: '462',
