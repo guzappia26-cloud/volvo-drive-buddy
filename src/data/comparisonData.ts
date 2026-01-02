@@ -502,7 +502,7 @@ const xc90Data: VolvoModelData = {
       resaleValue: '65-70%',
     },
     {
-      name: 'T8 Polestar',
+      name: 'XC90 Ultra Dark',
       price: 'R$ 739.000',
       motorType: 'PHEV',
       power: '462',
