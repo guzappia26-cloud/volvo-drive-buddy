@@ -597,23 +597,6 @@ const xc60NonPremiumData: VolvoModelData = {
       materials: 'Premium Escandinavo',
       resaleValue: '65-70%',
     },
-    {
-      name: 'T8 Momentum',
-      price: 'R$ 459.950',
-      motorType: 'PHEV',
-      power: '462',
-      acceleration: '4,8',
-      autonomy: '60',
-      battery: '19',
-      chargingTime: '-',
-      trunk: '405',
-      os: 'Google',
-      ncapAdult: '95%',
-      ncapChildren: '91%',
-      dealerships: '52',
-      materials: 'Premium Escandinavo',
-      resaleValue: '65-70%',
-    },
   ],
   competitors: [
     {
