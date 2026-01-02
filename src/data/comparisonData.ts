@@ -362,7 +362,7 @@ const xc60Data: VolvoModelData = {
   model: 'XC60',
   versions: [
     {
-      name: 'T8 Momentum',
+      name: 'T8 Plus',
       price: 'R$ 459.950',
       motorType: 'PHEV',
       power: '462',
@@ -608,24 +608,7 @@ const ex90Data: VolvoModelData = {
   model: 'EX90',
   versions: [
     {
-      name: 'Core Twin Motor',
-      price: 'R$ 749.950',
-      motorType: 'BEV AWD',
-      power: '408',
-      acceleration: '5,8',
-      autonomy: '459',
-      battery: '111',
-      chargingTime: '30',
-      trunk: '689',
-      os: 'Google',
-      ncapAdult: '97%',
-      ncapChildren: '93%',
-      dealerships: '52',
-      materials: 'Premium Escandinavo',
-      resaleValue: '65-70%',
-    },
-    {
-      name: 'Ultra Twin Motor',
+      name: 'Ultra Performance',
       price: 'R$ 849.950',
       motorType: 'BEV AWD Performance',
       power: '517',
