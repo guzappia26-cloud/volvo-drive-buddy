@@ -172,16 +172,22 @@ export default function DadosTecnicosPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="w-full h-14"
-                  onClick={() => window.open(modelData.pdfUrl, '_blank')}
+              <a
+                  href={modelData.pdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full"
                 >
-                  <FileText className="w-5 h-5 mr-2" />
-                  Ver Ficha Técnica Completa
-                  <ExternalLink className="w-4 h-4 ml-2" />
-                </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full h-14"
+                  >
+                    <FileText className="w-5 h-5 mr-2" />
+                    Ver Ficha Técnica Completa
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </Button>
+                </a>
               </motion.div>
             </motion.div>
           )}
