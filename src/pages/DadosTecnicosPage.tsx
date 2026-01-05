@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FileText, ExternalLink, ChevronDown, Zap, Gauge, Battery, Timer, CircleDot } from 'lucide-react';
+import { FileText, ChevronDown, ChevronUp, Zap, Gauge, Battery, Timer, CircleDot } from 'lucide-react';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { Button } from '@/components/ui/button';
 import {
@@ -17,6 +17,7 @@ import {
 
 export default function DadosTecnicosPage() {
   const [selectedModel, setSelectedModel] = useState<string>('');
+  const [showPdf, setShowPdf] = useState(false);
 
   const modelData = useMemo(
     () => (selectedModel ? getTechnicalDataForModel(selectedModel) : null),
@@ -166,29 +167,47 @@ export default function DadosTecnicosPage() {
                 )}
               </div>
 
-              {/* PDF Link */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-              <a
-                  href={modelData.pdfUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full"
+              {/* PDF Toggle Button */}
+              {modelData.pdfUrl.startsWith('/') && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="space-y-4"
                 >
                   <Button
                     size="lg"
                     variant="outline"
                     className="w-full h-14"
+                    onClick={() => setShowPdf(!showPdf)}
                   >
                     <FileText className="w-5 h-5 mr-2" />
-                    Ver Ficha Técnica Completa
-                    <ExternalLink className="w-4 h-4 ml-2" />
+                    {showPdf ? 'Ocultar' : 'Ver'} Ficha Técnica Completa
+                    {showPdf ? (
+                      <ChevronUp className="w-4 h-4 ml-2" />
+                    ) : (
+                      <ChevronDown className="w-4 h-4 ml-2" />
+                    )}
                   </Button>
-                </a>
-              </motion.div>
+
+                  <AnimatePresence>
+                    {showPdf && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="overflow-hidden rounded-lg border border-border"
+                      >
+                        <iframe
+                          src={modelData.pdfUrl}
+                          className="w-full h-[600px] bg-white"
+                          title={`Ficha Técnica ${selectedModel}`}
+                        />
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              )}
             </motion.div>
           )}
         </AnimatePresence>
