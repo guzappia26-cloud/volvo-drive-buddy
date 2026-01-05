@@ -52,7 +52,7 @@ export const technicalData: ModelTechnicalData[] = [
         wheels: '19"',
       },
     ],
-    pdfUrl: 'https://www.volvocars.com/br/v/car-configurator/ex30',
+    pdfUrl: '/pdfs/Ficha_de_produto_-_EX30.pdf',
   },
   {
     model: 'EC40',
