@@ -52,7 +52,7 @@ export const technicalData: ModelTechnicalData[] = [
         wheels: '19"',
       },
     ],
-    pdfUrl: '/pdfs/Ficha_de_produto_-_EX30.pdf',
+    pdfUrl: '/pdfs/ex30-specs.pdf',
   },
   {
     model: 'EC40',
