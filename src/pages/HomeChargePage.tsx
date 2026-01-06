@@ -28,7 +28,7 @@ const benefits = [
 
 export default function HomeChargePage() {
   const handleOpenHomeCharge = () => {
-    window.open('https://www.volvocars.com/br/v/cars/volvo-home-charge', '_blank');
+    window.open('https://preview--volvo-charge-compare.lovable.app/', '_blank');
   };
 
   return (
