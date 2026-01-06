@@ -11,12 +11,6 @@ const features = [{
   to: '/comparativo',
   gradient: 'linear-gradient(135deg, hsl(210, 100%, 18%) 0%, hsl(200, 85%, 35%) 100%)'
 }, {
-  title: 'Configurador',
-  description: 'Configure cores, rodas e interiores dos veículos',
-  icon: Settings2,
-  to: '/configurador',
-  gradient: 'linear-gradient(135deg, hsl(200, 70%, 25%) 0%, hsl(180, 60%, 35%) 100%)'
-}, {
   title: 'Dados Técnicos',
   description: 'Fichas técnicas e especificações de todos os modelos',
   icon: FileSpreadsheet,
