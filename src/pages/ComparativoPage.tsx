@@ -241,7 +241,7 @@ export default function ComparativoPage() {
                     <Trophy className="w-5 h-5" />
                     <span className="text-sm font-medium opacity-80">Volvo {selectedModel}</span>
                   </div>
-                  <p className="text-3xl font-bold mb-2">{comparisonStats.volvoWins} vitórias</p>
+                  <p className="text-3xl font-bold mb-2">{comparisonStats.volvoWins} vantagens</p>
                   <div className="flex flex-wrap gap-1.5">
                     {comparisonStats.volvoAdvantages.map((adv) => (
                       <span key={adv} className="text-xs bg-primary-foreground/20 px-2 py-0.5 rounded-full">
@@ -257,7 +257,7 @@ export default function ComparativoPage() {
                     <Scale className="w-5 h-5 text-muted-foreground" />
                     <span className="text-sm font-medium text-muted-foreground">{selectedCompetitor}</span>
                   </div>
-                  <p className="text-3xl font-bold text-foreground mb-2">{comparisonStats.competitorWins} vitórias</p>
+                  <p className="text-3xl font-bold text-foreground mb-2">{comparisonStats.competitorWins} vantagens</p>
                   <div className="flex flex-wrap gap-1.5">
                     {comparisonStats.competitorAdvantages.map((adv) => (
                       <span key={adv} className="text-xs bg-foreground/10 px-2 py-0.5 rounded-full text-muted-foreground">
