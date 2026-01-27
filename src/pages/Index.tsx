@@ -1,4 +1,4 @@
-import { GitCompare, Settings2, FileSpreadsheet, Zap } from 'lucide-react';
+import { GitCompare, Settings2, FileSpreadsheet, Zap, GraduationCap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { QuadrantCard } from '@/components/home/QuadrantCard';
@@ -22,6 +22,13 @@ const features = [{
   icon: Zap,
   to: '/home-charge',
   gradient: 'linear-gradient(135deg, hsl(38, 80%, 45%) 0%, hsl(45, 70%, 50%) 100%)'
+}, {
+  title: 'Thrive Learner',
+  description: 'Acesse a plataforma de treinamento e aprendizado Volvo',
+  icon: GraduationCap,
+  to: '/thrive',
+  gradient: 'linear-gradient(135deg, hsl(280, 60%, 35%) 0%, hsl(300, 50%, 45%) 100%)',
+  external: 'https://volvocars.learn.link/login'
 }];
 const Index = () => {
   return <div className="min-h-screen bg-background">
