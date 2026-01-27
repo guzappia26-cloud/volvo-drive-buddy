@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle2, XCircle, Trophy, ChevronDown } from 'lucide-react';
+import { CheckCircle2, XCircle, Trophy, ChevronDown, Scale } from 'lucide-react';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { Button } from '@/components/ui/button';
 import {
@@ -108,18 +108,31 @@ export default function ComparativoPage() {
     return version[keyMap[key]] || '-';
   };
 
-  const volvoAdvantages = useMemo(() => {
-    if (!canCompare) return 0;
-    let count = 0;
+  const comparisonStats = useMemo(() => {
+    if (!canCompare) return { volvoWins: 0, competitorWins: 0, ties: 0, volvoAdvantages: [], competitorAdvantages: [] };
+    let volvoWins = 0;
+    let competitorWins = 0;
+    let ties = 0;
+    const volvoAdvantages: string[] = [];
+    const competitorAdvantages: string[] = [];
+    
     comparisonParameters.forEach(param => {
       const result = compareValues(
         getValue(volvoVersionData!, param.key),
         getValue(competitorVersionData!, param.key),
         param.higherIsBetter
       );
-      if (result === 'volvo') count++;
+      if (result === 'volvo') {
+        volvoWins++;
+        volvoAdvantages.push(param.label);
+      } else if (result === 'competitor') {
+        competitorWins++;
+        competitorAdvantages.push(param.label);
+      } else if (result === 'tie') {
+        ties++;
+      }
     });
-    return count;
+    return { volvoWins, competitorWins, ties, volvoAdvantages, competitorAdvantages };
   }, [canCompare, volvoVersionData, competitorVersionData]);
 
   return (
@@ -220,19 +233,41 @@ export default function ComparativoPage() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              {/* Summary Banner */}
-              <div className="mb-6 rounded-xl bg-gradient-volvo p-5 text-primary-foreground">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm opacity-80">Volvo {selectedModel} {selectedVersion}</p>
-                    <p className="text-2xl font-bold">
-                      {volvoAdvantages} vantagens
-                    </p>
-                    <p className="text-sm opacity-80">
-                      sobre {selectedCompetitor} {selectedCompetitorVersion}
-                    </p>
+              {/* Summary Banner - F1 Style */}
+              <div className="mb-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Volvo Advantages */}
+                <div className="rounded-xl bg-gradient-volvo p-5 text-primary-foreground">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Trophy className="w-5 h-5" />
+                    <span className="text-sm font-medium opacity-80">Volvo {selectedModel}</span>
                   </div>
-                  <Trophy className="w-12 h-12 opacity-80" />
+                  <p className="text-3xl font-bold mb-2">{comparisonStats.volvoWins} vitórias</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {comparisonStats.volvoAdvantages.map((adv) => (
+                      <span key={adv} className="text-xs bg-primary-foreground/20 px-2 py-0.5 rounded-full">
+                        {adv}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Competitor Advantages */}
+                <div className="rounded-xl bg-muted p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Scale className="w-5 h-5 text-muted-foreground" />
+                    <span className="text-sm font-medium text-muted-foreground">{selectedCompetitor}</span>
+                  </div>
+                  <p className="text-3xl font-bold text-foreground mb-2">{comparisonStats.competitorWins} vitórias</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {comparisonStats.competitorAdvantages.map((adv) => (
+                      <span key={adv} className="text-xs bg-foreground/10 px-2 py-0.5 rounded-full text-muted-foreground">
+                        {adv}
+                      </span>
+                    ))}
+                    {comparisonStats.competitorAdvantages.length === 0 && (
+                      <span className="text-xs text-muted-foreground/60">Nenhuma vantagem</span>
+                    )}
+                  </div>
                 </div>
               </div>
 
@@ -264,7 +299,7 @@ export default function ComparativoPage() {
                         return (
                           <motion.tr
                             key={param.key}
-                            className="border-b border-border/50 last:border-0"
+                            className={`border-b border-border/50 last:border-0 ${volvoWins ? 'bg-success/5' : compWins ? 'bg-muted/30' : ''}`}
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.05 }}
@@ -278,10 +313,10 @@ export default function ComparativoPage() {
                                 {volvoWins && <CheckCircle2 className="w-4 h-4 text-success" />}
                               </div>
                             </td>
-                            <td className={`p-4 text-center ${compWins ? 'text-muted-foreground' : 'text-muted-foreground'}`}>
+                            <td className={`p-4 text-center font-semibold ${compWins ? 'text-amber-600' : 'text-muted-foreground'}`}>
                               <div className="flex items-center justify-center gap-2">
                                 {compVal} {param.unit}
-                                {compWins && <span className="text-xs">(melhor)</span>}
+                                {compWins && <CheckCircle2 className="w-4 h-4 text-amber-600" />}
                               </div>
                             </td>
                           </motion.tr>
