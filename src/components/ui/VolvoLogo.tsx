@@ -1,26 +1,31 @@
 import { motion } from 'framer-motion';
+import volvoWordmark from '@/assets/volvo-wordmark.svg';
+
 interface VolvoLogoProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg';
+  inverted?: boolean;
 }
+
 export function VolvoLogo({
   className = '',
-  size = 'md'
+  size = 'md',
+  inverted = false
 }: VolvoLogoProps) {
   const sizeClasses = {
-    sm: 'w-8 h-8',
-    md: 'w-12 h-12',
-    lg: 'w-16 h-16'
+    sm: 'h-6',
+    md: 'h-8',
+    lg: 'h-10'
   };
-  return <motion.div className={`${sizeClasses[size]} ${className}`} initial={{
-    opacity: 0,
-    scale: 0.8
-  }} animate={{
-    opacity: 1,
-    scale: 1
-  }} transition={{
-    duration: 0.3
-  }}>
-      
-    </motion.div>;
+
+  return (
+    <motion.img
+      src={volvoWordmark}
+      alt="Volvo Cars"
+      className={`${sizeClasses[size]} ${inverted ? 'invert' : ''} ${className}`}
+      initial={{ opacity: 0, scale: 0.9 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3 }}
+    />
+  );
 }
