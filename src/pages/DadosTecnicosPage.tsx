@@ -198,11 +198,26 @@ export default function DadosTecnicosPage() {
                         exit={{ opacity: 0, height: 0 }}
                         className="overflow-hidden rounded-lg border border-border"
                       >
-                        <iframe
-                          src={modelData.pdfUrl}
+                        <object
+                          data={modelData.pdfUrl}
+                          type="application/pdf"
                           className="w-full h-[600px] bg-white"
-                          title={`Ficha Técnica ${selectedModel}`}
-                        />
+                        >
+                          <div className="flex flex-col items-center justify-center h-[300px] bg-muted/30 gap-4">
+                            <FileText className="w-12 h-12 text-muted-foreground" />
+                            <p className="text-muted-foreground text-center">
+                              Não foi possível exibir o PDF no navegador.
+                            </p>
+                            <a
+                              href={modelData.pdfUrl}
+                              download
+                              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-md hover:bg-primary/90 transition-colors"
+                            >
+                              <FileText className="w-4 h-4" />
+                              Baixar Ficha Técnica
+                            </a>
+                          </div>
+                        </object>
                       </motion.div>
                     )}
                   </AnimatePresence>
