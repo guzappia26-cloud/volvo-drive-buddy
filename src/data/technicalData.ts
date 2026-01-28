@@ -202,7 +202,7 @@ export const technicalData: ModelTechnicalData[] = [
         wheels: '22"',
       },
     ],
-    pdfUrl: 'https://www.volvocars.com/br/v/car-configurator/ex90',
+    pdfUrl: '/pdfs/ex90-ficha.pdf',
   },
 ];
 
