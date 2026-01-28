@@ -45,7 +45,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-cover bg-center" style={{
         backgroundImage: `url(${heroBackground})`
       }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/80 to-background" />
         
         <div className="relative container px-4 py-12 md:py-16">
           <motion.div className="flex flex-col items-center text-center" initial={{
@@ -57,9 +57,8 @@ const Index = () => {
         }} transition={{
           delay: 0.2
         }}>
-            <VolvoLogo size="lg" className="text-primary-foreground mb-4" />
-            <h1 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-2">Dealer App</h1>
-            
+            <VolvoLogo size="lg" inverted className="mb-3" />
+            <p className="text-lg md:text-xl font-light text-white/80 tracking-widest uppercase">Dealer App</p>
           </motion.div>
         </div>
       </motion.section>
