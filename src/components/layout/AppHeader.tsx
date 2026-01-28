@@ -31,9 +31,7 @@ export function AppHeader({ title, showBack = false }: AppHeaderProps) {
             </Link>
           )}
           {isHome && (
-            <div className="flex items-center gap-3">
-              <span className="text-lg font-semibold text-foreground">Dealer App</span>
-            </div>
+            <span className="text-lg font-semibold text-foreground">Dealer App</span>
           )}
         </div>
         
