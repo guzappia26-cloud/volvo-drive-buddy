@@ -57,8 +57,7 @@ const Index = () => {
         }} transition={{
           delay: 0.2
         }}>
-            <VolvoLogo size="lg" inverted className="mb-3" />
-            <p className="text-lg md:text-xl font-light text-white/80 tracking-widest uppercase">Dealer App</p>
+            <h1 className="text-3xl md:text-4xl font-bold text-white tracking-wide">Dealer App</h1>
           </motion.div>
         </div>
       </motion.section>
