@@ -32,8 +32,7 @@ export function AppHeader({ title, showBack = false }: AppHeaderProps) {
           )}
           {isHome && (
             <div className="flex items-center gap-3">
-              <VolvoLogo size="sm" className="text-primary" />
-              <span className="text-lg font-semibold text-foreground">Sales Hub</span>
+              <span className="text-lg font-semibold text-foreground">Dealer App</span>
             </div>
           )}
         </div>
