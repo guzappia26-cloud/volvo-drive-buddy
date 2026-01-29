@@ -12,6 +12,12 @@ export function AppHeader({ title, showBack = false }: AppHeaderProps) {
   const location = useLocation();
   const isHome = location.pathname === '/';
 
+  // Header simplificado para a home
+  if (isHome) {
+    return null; // Não renderiza header na home, pois o hero já tem o branding
+  }
+
+  // Header para páginas internas
   return (
     <motion.header
       className="sticky top-0 z-50 glass border-b border-border/30"
@@ -19,29 +25,23 @@ export function AppHeader({ title, showBack = false }: AppHeaderProps) {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="container flex h-16 items-center justify-between px-4">
-        <div className="flex items-center gap-3">
-          {showBack && !isHome && (
-            <Link
-              to="/"
-              className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <ChevronLeft className="w-5 h-5" />
-              <span className="text-sm font-medium">Voltar</span>
-            </Link>
-          )}
-          {isHome && (
-            <span className="text-lg font-semibold text-foreground">Dealer App</span>
-          )}
-        </div>
-        
-        {title && (
-          <h1 className="absolute left-1/2 -translate-x-1/2 text-lg font-semibold text-foreground">
-            {title}
-          </h1>
+      <div className="container flex h-16 items-center justify-center px-4 relative">
+        {showBack && (
+          <Link
+            to="/"
+            className="absolute left-4 flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <ChevronLeft className="w-5 h-5" />
+            <span className="text-sm font-medium">Voltar</span>
+          </Link>
         )}
         
-        <div className="w-20" /> {/* Spacer for centering */}
+        <div className="flex flex-col items-center">
+          <VolvoLogo size="sm" />
+          <span className="text-xs font-medium text-muted-foreground tracking-wider uppercase mt-1">
+            {title || 'Dealer App'}
+          </span>
+        </div>
       </div>
     </motion.header>
   );
