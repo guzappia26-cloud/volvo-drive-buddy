@@ -47,7 +47,7 @@ const Index = () => {
       }} />
         <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/80 to-background" />
         
-        <div className="relative container px-4 py-12 md:py-16">
+        <div className="relative container px-4 py-16 md:py-20">
           <motion.div className="flex flex-col items-center text-center" initial={{
           y: 20,
           opacity: 0
@@ -57,7 +57,10 @@ const Index = () => {
         }} transition={{
           delay: 0.2
         }}>
-            <h1 className="text-3xl md:text-4xl font-bold text-white tracking-wide">Dealer App</h1>
+            <VolvoLogo size="lg" inverted className="mb-3" />
+            <span className="text-sm md:text-base font-light text-white/80 tracking-[0.3em] uppercase">
+              Dealer App
+            </span>
           </motion.div>
         </div>
       </motion.section>
