@@ -1,9 +1,15 @@
-import { GitCompare, Settings2, FileSpreadsheet, Zap, GraduationCap } from 'lucide-react';
+import { GitCompare, FileSpreadsheet, Zap, GraduationCap, Briefcase } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { QuadrantCard } from '@/components/home/QuadrantCard';
 import { VolvoLogo } from '@/components/ui/VolvoLogo';
 const features = [{
+  title: 'Gestão Comercial',
+  description: 'Acompanhe leads, pipeline e negociações em andamento',
+  icon: Briefcase,
+  to: '/gestao-comercial',
+  gradient: 'linear-gradient(135deg, hsl(220, 70%, 25%) 0%, hsl(210, 80%, 40%) 100%)'
+}, {
   title: 'Comparativo',
   description: 'Compare modelos Volvo com concorrentes e veja as vantagens',
   icon: GitCompare,
