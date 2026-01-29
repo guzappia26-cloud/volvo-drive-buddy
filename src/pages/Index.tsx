@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { QuadrantCard } from '@/components/home/QuadrantCard';
 import { VolvoLogo } from '@/components/ui/VolvoLogo';
-import heroBackground from '@/assets/volvo-hero-bg.jpg';
 const features = [{
   title: 'Comparativo',
   description: 'Compare modelos Volvo com concorrentes e veja as vantagens',
@@ -42,10 +41,8 @@ const Index = () => {
     }} transition={{
       duration: 0.6
     }}>
-        <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: `url(${heroBackground})`
-      }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/80 to-background" />
+        <div className="absolute inset-0 bg-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/95 to-background" />
         
         <div className="relative container px-4 py-16 md:py-20">
           <motion.div className="flex flex-col items-center text-center" initial={{
