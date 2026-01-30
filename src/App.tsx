@@ -10,8 +10,6 @@ import ComparativoNonPremiumPage from "./pages/ComparativoNonPremiumPage";
 import ConfiguradorPage from "./pages/ConfiguradorPage";
 import DadosTecnicosPage from "./pages/DadosTecnicosPage";
 import HomeChargePage from "./pages/HomeChargePage";
-import GestaoComercialPage from "./pages/GestaoComercialPage";
-import ClienteDetalhePage from "./pages/ClienteDetalhePage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,8 +28,6 @@ const App = () => (
           <Route path="/configurador" element={<ConfiguradorPage />} />
           <Route path="/dados-tecnicos" element={<DadosTecnicosPage />} />
           <Route path="/home-charge" element={<HomeChargePage />} />
-          <Route path="/gestao-comercial" element={<GestaoComercialPage />} />
-          <Route path="/gestao-comercial/cliente/:id" element={<ClienteDetalhePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
