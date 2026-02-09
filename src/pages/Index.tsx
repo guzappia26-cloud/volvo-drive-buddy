@@ -1,4 +1,4 @@
-import { GitCompare, FileSpreadsheet, Zap, GraduationCap } from 'lucide-react';
+import { GitCompare, FileSpreadsheet, GraduationCap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { AppHeader } from '@/components/layout/AppHeader';
 import { QuadrantCard } from '@/components/home/QuadrantCard';
@@ -15,12 +15,6 @@ const features = [{
   icon: FileSpreadsheet,
   to: '/dados-tecnicos',
   gradient: 'linear-gradient(135deg, hsl(152, 60%, 30%) 0%, hsl(170, 50%, 40%) 100%)'
-}, {
-  title: 'Volvo Home Charge',
-  description: 'Calculadora de vantagens do carro elétrico',
-  icon: Zap,
-  to: '/home-charge',
-  gradient: 'linear-gradient(135deg, hsl(38, 80%, 45%) 0%, hsl(45, 70%, 50%) 100%)'
 }, {
   title: 'Thrive Learner',
   description: 'Acesse a plataforma de treinamento e aprendizado Volvo',
